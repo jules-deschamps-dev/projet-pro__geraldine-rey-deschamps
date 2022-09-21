@@ -1,0 +1,51 @@
+
+
+#thread{
+  ul{
+    .card{
+      position: relative;
+      display: flex;
+      height: 400px;
+      flex-direction: column;
+      border-radius: 20px;
+      .card-content{
+        position: relative;
+        max-height: 100%;
+        margin: auto;
+        background-color: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: rgb(200, 200, 200) 2px 2px 10px;
+        &:hover{
+          box-shadow: rgb(170, 170, 170) 2px 2px 40px;
+        }
+        &:hover .thumb-text-container{
+          height: 100%;
+          transition: all;
+          transition-duration: 300ms;
+          transition-timing-function: ease-in;
+          background-color: rgba($color: white, $alpha: .8);
+          transform: perspective(1000px) rotateX(0deg);
+        }
+        .thumb-text-container{
+          padding: 5%;
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          overflow: hidden;
+          transform: perspective(1500px) rotateX(90deg);
+          perspective-origin: top;
+          transform-origin: top;
+        }
+        h2{
+          font-size: 2em;
+          font-family: popins;
+        }
+        .description{
+          display: flex;
+          font-family: lato;
+        }
+      }
+    }
+  }
+}

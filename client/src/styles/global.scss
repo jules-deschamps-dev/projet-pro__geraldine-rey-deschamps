@@ -1,0 +1,208 @@
+@font-face {
+  font-family: "tintin";
+  src: url(../assets/fonts/tintin_talking.ttf)
+}
+
+@font-face {
+  font-family: "tintinMaj";
+  src: url(../assets/fonts/tintinMAJ.ttf)
+}
+@font-face {
+  font-family: "lato";
+  src: url(../assets/fonts/Lato-Regular.ttf)
+}
+@font-face {
+  font-family: "popins";
+  src: url(../assets/fonts/Poppins-Regular.ttf)
+}
+
+html{
+  //background-color: rebeccapurple;
+  background-color: whitesmoke;
+  //background-image: url("./dist/img/paint-cover.jpg");
+  body{
+    margin: 0;
+    //background-color: rgba($color: black, $alpha: .8);
+    nav{
+      box-shadow: 0px 0px 8px black;
+    }
+  }
+}
+
+.branch-container{
+  display: flex;
+  flex-direction: row;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+  width: 60vw;
+  height: 60vh;
+  border-radius: 1vw;
+  overflow: hidden;
+  background-color: red;
+}
+.branch{
+  display: flex;
+  width: 30vw;
+  height: 100%;
+  background-color: white;
+  filter: grayscale(40%);
+  &:hover{
+    flex: 2;
+    filter: none;
+  }
+  h1{
+    margin: auto;
+    display: flex;
+    font-size: 5em;
+  }
+}
+
+.craft-branch{
+  background-size: cover;
+  color: white;
+  background-color: black;
+  //background-image: url("./dist/img/craft-cover.jpg");
+}
+.paint-branch{
+  background-size: cover;
+  //background-image: url("./dist/img/paint-cover.jpg");
+}
+
+.container-404{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: tintinMaj;
+}
+
+// FORMS
+.little-arrow{
+  display: flex;
+  margin: auto;
+  width: 35px;
+  height: 35px;
+  border: 10px solid black;
+  border-style: solid none none solid;
+  transform: rotate(-45deg);
+  animation-name: little-arrow-head-genesis;
+  animation-duration: 1100ms;
+}
+.little-arrow::before{
+  content: "";
+  translate: 0 -3px;
+  width: 35px;
+  height: 10px;
+  background: black;
+  transform: rotate(45deg) translate(0, 7.5px);
+  animation-name: little-arrow-stick-genesis;
+  animation-duration: 1100ms;
+}
+.little-arrow:hover::before{
+  transition-duration: 300ms;
+  transform: rotate(-180deg) translate(0, 7px);
+}
+
+@keyframes little-arrow-stick-genesis{
+  from{
+    transform: rotate(-180deg) translate(0, 7.5px);}
+  to{
+    transform: rotate(45deg) translate(0, 7.5px);
+  }
+}
+@keyframes little-arrow-head-genesis{
+  from{
+    transform: rotate(-180deg)
+  }
+  to{
+    transform: rotate(-45deg) 
+  }
+}
+
+.admin-pannel-container{
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 90px;
+  background-color: rgba($color: #FFF, $alpha: .9);
+  border-top: solid 4px darkred;
+  z-index: 2;
+  .admin-pannel{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    left: calc(50vw - 220px / 2);
+    top: 10px;
+    padding: 4px;
+    width: 220px;
+    height: 40px;
+    background-color: white;
+    box-sizing: content-box;
+    border: dotted 8px darkred;
+    border-radius: 40px;
+    img{
+      display: flex;
+      margin: auto;
+      height: 95%;
+    }
+  }
+}
+
+.crud-post{
+  display: flex;
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  right: -20px;
+  top: -20px;
+  border-radius: 20px;
+  background-color: rgba($color: white, $alpha: .9);
+  border: dotted darkred 4px;
+  z-index: 1;
+  img{
+    height: 95%;
+    margin: auto;
+  }
+}
+
+
+#new-post-container{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 50vw;
+  height: 50vh;
+  left: 25vw;
+  top: 25vh;
+  background-color: rgba(whitesmoke, 1);
+  border-radius: 50px;
+  border: dashed 6px black;
+  .form-element-container{
+    display: flex;
+    border-bottom: solid 2px black;
+  }
+  label{
+    display: flex;
+    width: 30%;
+    font-size: 1.5em;
+  }
+  textarea{
+    margin: auto;
+    width: 83.333%;
+  }
+  input{
+    position: relative;
+  }
+}
+
+
+.white-layer{
+  background-color: rgba($color: white, $alpha: .75);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: calc(100vh - 90px);
+}
