@@ -14,7 +14,12 @@ const App = () => {
       axios({
         method: "get",
         url: `${process.env.REACT_APP_API_URL}token`,
+        withCredentials: true
+        data: {
+          token: token,
+        },
         withCredentials: true,
+        cookie: token,
       })
         .then((res) => {
           setUid(res.data.id);
